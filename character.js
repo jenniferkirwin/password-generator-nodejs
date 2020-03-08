@@ -1,12 +1,36 @@
 class Character {
-    constructor() {
-        this.char = `!"#$%&'()*+,-./:;<=>?@[\\]^_\`{|}~1234567890abcdefghijklmnopqrstuvwxyABCDEFGHIJKLMNOPQRSTUVWXYZ`;
-        this.pick = this.char.match(/[a-z]/g);
-        this.finalPick = () => {
-            const leng = this.pick.length;
-            const index = Math.floor((Math.random() * leng) + 1);
-            return this.pick[index];
+    constructor(charType) {
+        this.char = `!"#$%&'()*+,-./:;<=>?@[]^_\`{|}~1234567890abcdefghijklmnopqrstuvwxyABCDEFGHIJKLMNOPQRSTUVWXYZ`;
+        this.charType = charType;
+    }
+
+    charRegex() { 
+        switch(this.charType) {
+            case `Lowercase`:
+                return /[a-z]/g;
+                break;
+            case `Uppercase`:
+                return /[A-Z]/g;
+                break;
+            case `Number`:
+                return /[0-9]/g;
+                break;
+            case `Special`:
+                return /[\W|_]/g;
+                break;
         }
+    }
+
+    charArray() {
+        const regex = this.charRegex();
+        return this.char.match(regex);
+    }
+
+    finalPick() {
+        const array = this.charArray();
+        const arrayLen = array.length;
+        const index = Math.floor((Math.random() * arrayLen));
+        return array[index];
     }
 }
 
