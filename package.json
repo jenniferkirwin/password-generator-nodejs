@@ -1,0 +1,22 @@
+{
+  "name": "password-generator-nodejs",
+  "version": "1.0.0",
+  "description": "Creates a password with user selected parameters",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jenniferkirwin/password-generator-nodejs.git"
+  },
+  "author": "Jennifer Kirwin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jenniferkirwin/password-generator-nodejs/issues"
+  },
+  "homepage": "https://github.com/jenniferkirwin/password-generator-nodejs#readme",
+  "dependencies": {
+    "inquirer": "^7.0.6"
+  }
+}
