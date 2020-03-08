@@ -31,7 +31,7 @@ class Password {
         return this.password;
     };
 
-    finalPassword() {
+    finalPasswordArray() {
         this.baseChar();
         this.additionalChar();
 
@@ -54,6 +54,14 @@ class Password {
         }
 
         return this.password;
+    }
+
+    printPassword() {
+        this.finalPasswordArray();
+        console.log(this.password);
+        console.log(this.password.length);
+        const finalPassword = this.password.join(``);
+        return finalPassword;
     }
 }
 
