@@ -1,8 +1,5 @@
 const inquirer = require(`inquirer`);
-const LowerCase = require(`./lowercase`);
-const Character = require(`./character`);
-
-// Asking the user's input to create password
+const Password = require(`./password`);
 
 inquirer
     .prompt([
@@ -33,7 +30,7 @@ inquirer
                     name: `Uppercase`
                 },
                 {
-                    name: `Numbers`
+                    name: `Number`
                 },
                 {
                     name: `Special`
@@ -51,4 +48,7 @@ inquirer
         }
 
     ])
-    .then((answers) => {console.log(answers)});
+    .then(({length, charTypes}) => {
+        const yourPassword = new Password(charTypes, length);
+        console.log(yourPassword.printPassword());
+    });
