@@ -58,8 +58,6 @@ class Password {
 
     printPassword() {
         this.finalPasswordArray();
-        console.log(this.password);
-        console.log(this.password.length);
         const finalPassword = this.password.join(``);
         return finalPassword;
     }
