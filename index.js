@@ -24,6 +24,7 @@ inquirer
         {
             type: `checkbox`,
             name: `charTypes`,
+            message: `Character Types: Select one or more the types of characters for password:`,
             choices: [
                 {
                     name: `Lowercase`
@@ -35,9 +36,18 @@ inquirer
                     name: `Numbers`
                 },
                 {
-                    name: `Special Characters`
+                    name: `Special`
                 }
-            ]
+            ],
+            validate: (val) => {
+                const valLength = val.length;
+
+                if (val.length > 0) {
+                    return true;
+                }
+
+                return `Please select atleast one character type`;
+            }
         }
 
     ])
